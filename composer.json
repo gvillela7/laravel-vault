@@ -1,0 +1,40 @@
+{
+    "name": "gvillela7/laravel-vault",
+    "description": "Package with simple methods for vault integration",
+    "license": "MIT",
+    "keywords": [
+        "gvillela7",
+        "laravel",
+        "vault",
+        "security"
+    ],
+    "require": {
+      "php": "^7.4|^8.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gvillela7\\Vault\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gustavo V. Goulart",
+            "email": "gvillela7@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gvillela7\\Vault\\VaultServiceProvider"
+            ]
+        }
+    }
+}

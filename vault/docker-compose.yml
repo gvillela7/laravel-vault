@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  vault:
+      image: hashicorp/vault:1.14.2
+      container_name: vault
+      volumes:
+        - /opt/vault/config:/vault/config/
+        - /opt/vault/file:/vault/file/
+        - /opt/vault/logs:/vault/logs/
+        - /opt/vault/data:/vault/data
+      ports:
+        - "8200:8200"
+      environment:
+          VAULT_ADDR: "http://0.0.0.0:8200"
+          VAULT_API_ADDR: "http://0.0.0.0:8200"
+          #- VAULT_ADDRESS: "http://0.0.0.0:8200"
+          VAULT_DEV_ROOT_TOKEN_ID: "vault-plaintext-root-token"
+      cap_add:
+        - IPC_LOCK
+      command: vault server -config=/vault/config/vault.json
+      networks:
+        - vault
+
+networks:
+    vault:
+      driver: bridge
+
