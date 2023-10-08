@@ -2,6 +2,7 @@
     "name": "gvillela7/laravel-vault",
     "description": "Package with simple methods for vault integration",
     "license": "MIT",
+    "version": "0.0.1",
     "keywords": [
         "gvillela7",
         "laravel",
